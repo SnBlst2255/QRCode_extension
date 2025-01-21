@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>QRCode by SNBLST</title>
+</head>
+
+<body>
+    <div class="flex center column wrapper">
+
+        <!--Main-->
+
+        <div class="flex center space-between header-block padding-5">
+            <div class="flex center">
+                <h1>QRCode by SNBLST</h1>
+            </div>
+
+            <div class="flex center">
+                <img id="settings-btn" class="icon" src="../images/settings.png" title="Settings" alt="">
+            </div>
+        </div>
+
+        <div class="flex center qr-code-block">
+            <div id="qrcode">
+                <!--QRCode will appear here-->
+            </div>
+        </div>
+
+        <div class="flex cetner buttons-block padding-5 gap-5">
+            <input id="url-input" class="url-inp" type="text" placeholder="Type something here...">
+            <button id="generate-btn" class="gen-btn" title="Generate new QR code (Enter)">Generate</button>
+        </div>
+
+        <!--Settings-->
+
+        <div class="center column modal" id="settings-modal">
+            <div class="flex center space-between header-block padding-5" style="border-bottom: 1px solid #E0E0E0;">
+                <h1>Settings</h1>
+                <img class="icon" id="apply-btn" src="../images/apply.png">
+            </div>
+
+            <div class="flex space-between column settings-block">
+
+                <div>
+                    <div class="flex center column gap-5 padding-5">
+                        <div class="flex center">
+                            <h1>Size</h1>
+                        </div>
+
+                        <div class="flex center gap-10">
+                            <div class="flex center gap-5">
+                                <label for="width">Width (px):</label>
+                                <input id="width" type="number" value="256">
+                            </div>
+
+                            <div class="flex center gap-5">
+                                <label for="height">Height (px):</label>
+                                <input id="height" type="number" value="256">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex center column gap-5 padding-5">
+                        <div class="flex center column">
+                            <h1>Color</h1>
+                        </div>
+
+                        <div class="flex center gap-10">
+                            <div class="flex center gap-5">
+                                <label for="background">Background:</label>
+                                <input id="background" type="color" value="#1C1C1E">
+                            </div>
+
+                            <div class="flex center gap-5">
+                                <label for="foreground">Foreground:</label>
+                                <input id="foreground" type="color" value="#FFFFFF">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex center column gap-10 padding-5">
+                    <div>
+                        <button id="reset" style="width: 100px;">Reset settings</button>
+                    </div>
+
+                    <div class="flex center column">
+                        <span>QRCode by SNBLST v1.0</span>
+                        <span>Powered by <a id="qrcodejs">qrcode.js</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/qrcode.min.js"></script>
+    <script src="ui.js" type="module"></script>
+    <script src="generator.js" type="module"></script>
+    <script src="settings.js" type="module"></script>
+</body>
+
+</html>
